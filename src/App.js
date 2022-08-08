@@ -130,13 +130,14 @@ function App() {
         mapboxAccessToken={process.env.REACT_APP_MAPBOX}
         onDblClick={handleAddClick}
         transitionDuration="1000"
+        doubleClickZoom={!currentUser}
       >
         {pins.map((p) => (
           <>
             <Marker longitude={p.long} latitude={p.lat} anchor="left"  >
               <RoomIcon
                 style={{
-                  fontSize: visualViewport.scale * 40,
+                  fontSize: viewport.zoom * 1000,
                   color: p.username===currentUser ? "crimson": "slateblue",
                   cursor: "pointer",
                 }}

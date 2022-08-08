@@ -34,7 +34,8 @@ form {
     height: 250px;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+   /*  justify-content: space-between; */
+   gap: 20px;
 }
 
 input, textarea {
