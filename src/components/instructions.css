@@ -1,0 +1,42 @@
+.instructionsContainer{
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    border-bottom: .5px solid teal
+}
+
+p{
+    background-color: white;
+
+}
+.special-p{
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.instCancel {
+    position:absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+

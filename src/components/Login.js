@@ -2,6 +2,7 @@ import Room from '@mui/icons-material/Room'
 import axios from 'axios'
 import { useRef, useState } from 'react'
 import './login.css'
+import logo from '../assets/socialTag.png'
 import CancelIcon from '@mui/icons-material/Cancel';
 
 
@@ -38,14 +39,13 @@ export function Login({setShowLogin, myStorage, setCurrentUser}) {
     }
 
     return(
-        <div className="loginContainer">
+        <div className="loginContainer small">
             <div className="logo">
-                <Room />
-                SamPin
+            <img src={logo} alt="Social Tag Logo"  className='loginLogo'/>
             </div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Enter Username" ref={nameRef}/>
-                <input type="password" placeholder="Enter Password" ref={passwordRef}/>
+                <input type="text" placeholder="Enter Username"  autocomplete="off" ref={nameRef}/>
+                <input type="password" placeholder="Enter Password" autocomplete="off"  ref={passwordRef}/>
                 <button className='loginBtn' type='submit'>Login</button>
 
                 {error && <span className='failure'>Something went wrong!</span>}

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useRef, useState } from 'react'
 import './register.css'
 import CancelIcon from '@mui/icons-material/Cancel';
+import logo from '../assets/socialTag.png'
 
 
 export function Register({setShowRegister}) {
@@ -37,14 +38,13 @@ export function Register({setShowRegister}) {
     }
 
     return(
-        <div className="registerContainer">
+        <div className="registerContainer small">
             <div className="logo">
-                <Room />
-                SamPin
+            <img src={logo} alt="Social Tag Logo"  className='loginLogo'/>
             </div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Enter Username" ref={nameRef}/>
-                <input type="email" placeholder="Enter Email" ref={emailRef}/>
+                <input type="text" placeholder="Enter Username" autocomplete="off" ref={nameRef}/>
+                <input type="email" placeholder="Enter Email" autocomplete="off" ref={emailRef}/>
                 <input type="password" placeholder="Enter Password" ref={passwordRef}/>
                 <button className='registerBtn' type='submit'>Register</button>
                 {success && <span className='success'>Successfull. You can login now!</span>}

@@ -10,6 +10,11 @@ import "./app.css";
 import mapboxgl from "mapbox-gl";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
+import { Instructions } from "./components/Instructions";
+
+import logo from './assets/socialTag.png'
+
+
 
 function App() {
   const myStorage = window.localStorage;
@@ -22,10 +27,13 @@ function App() {
 
   const [showRegister, setShowRegister] = useState(false)
   const [showLogin, setShowLogin] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(false)
 
   const [title, setTitle] = useState(null)
   const [desc, setDesc] = useState(null)
   const [rating, setRating] = useState(0)
+
+  
 
   const [viewport, setViewport] = useState({
    
@@ -91,8 +99,25 @@ function App() {
     setCurrentUser(null)
   }
 
+  const handleRegister = () => {
+    setShowRegister(true)
+    setShowLogin(false)
+    setShowInstructions(false)
+  }
+
+  const handleLogin = () => {
+    setShowRegister(false)
+    setShowLogin(true)
+    setShowInstructions(false)
+  }
+
+  const handleInstructions = () => {
+    setShowRegister(false)
+    setShowLogin(false)
+    setShowInstructions(true)
+  }
   return (
-    <div className="App">
+    <div className="App small">
       <Map
         initialViewState={{
           longitude: viewport.longitude,
@@ -147,7 +172,7 @@ function App() {
             )}
           </>
         ))}
-        {newPlace && (
+        {newPlace && currentUser && (
         <Popup
                 longitude={newPlace.lng}
                 latitude={newPlace.lat}
@@ -185,14 +210,17 @@ function App() {
                 
                 ) : (
         <div className="buttons">
-        <button className="button instructions">Instructions</button>
-              <button className="button login" onClick={() => setShowLogin(true)}>Login</button>
-              <button className="button register" onClick={() => setShowRegister(true)}>Register</button>
+        <button className="button instructions" onClick={handleInstructions}>Instructions</button>
+              <button className="button login" onClick={handleLogin}>Login</button>
+              <button className="button register" onClick={handleRegister}>Register</button>
               </div>
       )}
+      {showInstructions && <Instructions setShowInstructions={setShowInstructions} />}
       {showRegister &&     <Register setShowRegister={setShowRegister}/>}
       {showLogin &&     <Login setShowLogin={setShowLogin} myStorage={myStorage} setCurrentUser={setCurrentUser}/>} 
-  
+            <div className="logoMain">
+            <img src={logo} alt="Social Tag Logo"  className='loginLogo'/>
+            </div>
       </Map>
       
      
