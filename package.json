@@ -35,7 +35,5 @@
     "defaults",
     "not ie 11"
   ],
-
-
   "proxy": "https://socialtags-map.herokuapp.com"
 }
