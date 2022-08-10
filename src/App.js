@@ -44,7 +44,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("/pins");
+        const res = await axios.get("https://socialtags-map.herokuapp.com/pins");
         setPins(res.data);
 
       } catch (err) {
