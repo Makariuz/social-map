@@ -35,7 +35,7 @@ form {
     display:flex;
     flex-direction: column;
    /*  justify-content: space-between; */
-   gap: 20px;
+   gap: 10px;
 }
 
 input, textarea {
@@ -81,6 +81,8 @@ input::placeholder, textarea::placeholder {
 .instructions{
     background-color: slateblue;
     margin-right: 10px;
+    top: 0px;
+
 }
 .register{
     background-color: slateblue;
@@ -92,6 +94,19 @@ input::placeholder, textarea::placeholder {
     right: 10px;
     
 }
+.logout{
+    top: 0;
+}
+
+.buttons{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 210px;
+    gap: 10px;
+
+}
+
 
 .logoMain{
     position: absolute;
