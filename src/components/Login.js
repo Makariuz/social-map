@@ -24,7 +24,7 @@ export function Login({setShowLogin, myStorage, setCurrentUser}) {
         }
 
         try{
-            const res = await axios.post(`/map/login`, user)
+            const res = await axios.post(`https://socialtags-map.herokuapp.com/map/login`, user)
             myStorage.setItem("user", res.data.username)
             setCurrentUser(res.data.username)
             setError(false);

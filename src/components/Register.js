@@ -26,7 +26,7 @@ export function Register({setShowRegister}) {
         }
 
         try{
-            await axios.post(`/register`, newUser)
+            await axios.post(`https://socialtags-map.herokuapp.com/map/register`, newUser)
             setError(false)
             setSuccess(true)
 
